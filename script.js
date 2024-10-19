@@ -1,5 +1,16 @@
 function minDate(dates) {
   //write you code here
+	let min = new Date(dates[0].replace(/\//g, '-')); // Replace '/' with '-' for consistent parsing
+  
+  for (let i = 1; i < dates.length; i++) {
+    let currentDate = new Date(dates[i].replace(/\//g, '-')); // Correct month (0-indexed)
+      
+      if (currentDate < min) {
+        min = currentDate;
+      }
+    }
+  
+    return min.toISOString().split('T')[0];
 }
 
 // Do not change the code
