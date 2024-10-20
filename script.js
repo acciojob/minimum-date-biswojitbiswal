@@ -1,9 +1,9 @@
 function minDate(dates) {
   //write you code here
-	let min = new Date(dates[0].replace(/\//g, '-')); // Replace '/' with '-' for consistent parsing
+	let min = new Date(dates[0].replace(/\//g, '-'));
   
   for (let i = 1; i < dates.length; i++) {
-    let currentDate = new Date(dates[i].replace(/\//g, '-')); // Correct month (0-indexed)
+    let currentDate = new Date(dates[i].replace(/\//g, '-'));
       
       if (currentDate < min) {
         min = currentDate;
