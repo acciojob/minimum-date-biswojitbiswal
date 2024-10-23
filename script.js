@@ -1,16 +1,17 @@
 function minDate(dates) {
   //write you code here
-	let min = new Date(dates[0].replace(/\//g, '-'));
+	let minDate = dates[0];
   
   for (let i = 1; i < dates.length; i++) {
     let currentDate = new Date(dates[i].replace(/\//g, '-'));
+    let min = new Date(minDate.replace(/\//g, '-'));
       
       if (currentDate < min) {
-        min = currentDate;
-      }
+	      minDate = dates[i];
+	}
     }
   
-    return min.toISOString().split('T')[0];
+    return minDate;
 }
 
 // Do not change the code
